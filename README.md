@@ -3,12 +3,12 @@
 > **An Educational Bioinformatics & Dynamic Programming Visualization Platform**  
 > *Translating abstract sequence alignment matrices and Central Dogma mechanics into intuitive CLI dashboards and real-time interactive 2D simulations.*
 
-![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
-![Pygame Version](https://img.shields.io/badge/Pygame-2.6.1-green.svg)
+![Python Version](https://img.shields.io/badge/Python-3.6%2B-blue.svg)
+![Pygame](https://img.shields.io/badge/Pygame-2.0%2B%20(Optional)-green.svg)
 ![Algorithm](https://img.shields.io/badge/Algorithm-Dynamic%20Programming-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
+![Project Type](https://img.shields.io/badge/Project-Academic%20%2F%20Educational-blue.svg)
 
-The **Interactive Genomic Analysis And Biological Simulation System** is a hybrid bioinformatics platform written in Python that bridges theoretical algorithm design (Needleman–Wunsch, Smith–Waterman, Levenshtein edit distance) with step-by-step biological simulation (transcription, codon-to-amino-acid translation, hydrogen-bond dynamics, and dynamic programming matrix backtracking).
+The **Interactive Genomic Analysis And Biological Simulation System** is a hybrid bioinformatics software tool written in Python that bridges theoretical algorithm design (Needleman–Wunsch, Smith–Waterman, Levenshtein edit distance) with step-by-step visual simulation of biological processes (transcription, codon-to-amino-acid translation, hydrogen-bond indicators, and dynamic programming matrix backtracking).
 
 ---
 
@@ -62,9 +62,9 @@ The **Interactive Genomic Analysis And Biological Simulation System** is a hybri
 
 Raw nucleotide sequences and 2D Dynamic Programming (DP) score grids are often opaque when presented solely as numerical tables or text strings. Students and researchers frequently struggle to visualize how cell dependencies ($S_{i,j}$) construct optimal global or local alignment routes, or how nucleotide variations translate into altered protein chains.
 
-This system combines **genomic sequence analysis**, **algorithm visualization**, and **biological simulation** into a single software package. It features:
+This system combines **genomic sequence analysis**, **algorithm visualization**, and **biological process simulation** into a single software package. It features:
 - A **CLI Analytical Dashboard** providing nucleotide metrics, transcription/translation mappings, global/local sequence alignments, and plain-English mutation logs.
-- An **Interactive Pygame 2D Visualizer** featuring animated double-strands, liquid DP tracer backtracks, dynamic hydrogen-bond physics, amino acid codon grouping, mouse pan/zoom, and real-time keyboard triggers.
+- An **Interactive Pygame 2D Visualizer** featuring wiggling helical strand nodes, liquid DP tracer backtracks, vibrating hydrogen-bond line indicators, amino acid codon grouping, mouse pan/zoom, and real-time keyboard triggers.
 
 Designed primarily for educational purposes, the system makes complex string-matching algorithms and Central Dogma mechanics tangible and visually understandable.
 
@@ -77,7 +77,7 @@ This project addresses four key educational and technical challenges:
 1. **Visualization Difficulties**: Traditional dynamic programming matrices are displayed as static numerical arrays, making it hard to follow step-by-step path selection.
 2. **Algorithmic Complexity**: Students often find it difficult to grasp the difference between global end-to-end sequence alignment (Needleman–Wunsch) and local sub-region pattern matching (Smith–Waterman).
 3. **Difficulty Understanding the Central Dogma**: Translating DNA template strands into mRNA (`T` $\rightarrow$ `U`) and grouping codons into amino acids is frequently taught abstractly rather than dynamically.
-4. **Limitations of Static/Text-Only Interfaces**: Standard command-line output lacks interactive exploration (zooming, panning, particle cues, hover tooltips) necessary for deep engagement.
+4. **Limitations of Static/Text-Only Interfaces**: Standard command-line output lacks interactive exploration (zooming, panning, particle visual cues, hover tooltips) necessary for deep engagement.
 
 ---
 
@@ -109,12 +109,12 @@ The primary objectives implemented in the core engine [dna.py](file:///Users/jhu
 
 ### Interactive Biological Simulation (GUI)
 - **Pygame 2D Canvas**: Dynamic graphics engine running at a smooth target rate of 60 FPS.
-- **Animated DNA/mRNA Strands**: Wiggling helical strand nodes colored by nucleotide type (`A`, `C`, `G`, `T`, `U`).
+- **Animated DNA/mRNA Strands**: Wiggling strand nodes colored by nucleotide type (`A`, `C`, `G`, `T`, `U`).
 - **Protein Chain Rendering**: Groups mRNA triplets with connecting brackets and renders synthesized amino acid nodes.
-- **Interactive Triggers**: Key `T` triggers animated transcription (glowing magenta `U` substitution with particle effects); Key `P` triggers translation (amino acid assembly).
+- **Interactive Triggers**: Key `T` triggers animated transcription (glowing magenta `U` substitution with particle bursts); Key `P` triggers translation (amino acid node assembly).
 - **Scoring Matrix Debugger**: Renders the 2D DP matrix in world space with real-time pulsing path highlights.
-- **Liquid Traceback Tracer**: An interpolated tracer dot walks along the optimal DP path to demonstrate backtracking.
-- **Vibrating Hydrogen Bonds**: Dynamic bond connections rendered between matching nucleotide base pairs.
+- **Liquid Traceback Tracer**: An interpolated tracer dot (`lerp`) walks along the optimal DP path to demonstrate backtracking.
+- **Vibrating Hydrogen Bond Lines**: Dynamic line connections rendered between matching nucleotide base pairs with pseudo-vibrational sine-wave offsets.
 - **Hover Tooltips**: Mouse-over inspection showing full chemical names (e.g., *Adenine*, *Isoleucine*, *START Codon*).
 - **Camera Navigation**: Full Mouse Scroll (zoom in/out) and Left-Click Drag (pan canvas).
 - **Adaptive Canvas**: Window dynamically scales based on sequence length, clamped safely between $1280 \times 720$ and $1600 \times 900$ pixels.
@@ -128,9 +128,9 @@ Standard bioinformatics assignments typically produce single-purpose command-lin
 
 ### Strongest Differentiator: Interactive Educational Algorithm Visualization
 The project's key differentiator is its ability to make abstract **Dynamic Programming (DP) state tables and matrix backtracking** visually interactive and intuitive:
-- **Liquid DP Traceback Tracer**: Rather than displaying static numerical tables, the 2D visualizer animates an interpolated particle tracer (`lerp`) that physically walks backward along the optimal path derived from the Needleman–Wunsch algorithm.
+- **Liquid DP Traceback Tracer**: Rather than displaying static numerical tables, the 2D visualizer animates an interpolated tracer dot (`lerp`) that physically walks backward along the optimal path derived from the Needleman–Wunsch algorithm.
 - **Real-Time Keyboard Triggers**: Users can interactively press `T` to witness animated DNA-to-mRNA transcription (glowing Uracil `U` replacement with particle bursts) and `P` to trigger mRNA-to-protein translation (amino acid node assembly with dynamic bracket grouping).
-- **Zero-Dependency Algorithm Core**: The alignment algorithms, matrix recurrence computations, traceback derivation, codon dictionaries, and custom 2D particle physics are built entirely from scratch in standard Python and Pygame primitives without relying on high-level bioinformatics frameworks (like `Biopython`).
+- **First-Principles Implementation**: The alignment algorithms, matrix recurrence computations, traceback derivation, codon dictionaries, and custom 2D visual rendering are built directly in Python and Pygame primitives without relying on high-level bioinformatics frameworks (like `Biopython`).
 
 ### The Technical & Engineering Rationale
 - **Dual Representation of DP State**: The exact dynamic programming matrix and traceback path tuple array `(i, j)` computed by the algorithm core are simultaneously consumed by an ANSI terminal table generator and a world-space Pygame rendering engine.
@@ -138,8 +138,8 @@ The project's key differentiator is its ability to make abstract **Dynamic Progr
 - **Biologically Accurate Mutation Categorization**: Instead of returning plain edit distances, it evaluates chemical ring structures to differentiate Purine $\leftrightarrow$ Purine / Pyrimidine $\leftrightarrow$ Pyrimidine substitutions (*Transitions*) from Purine $\leftrightarrow$ Pyrimidine substitutions (*Transversions*), translating computational variance into biological meaning.
 
 ### Why an Evaluator, Recruiter, or Developer Cares
-- **Computer Science Core Mastery**: Demonstrates hands-on mastery of fundamental algorithms—Dynamic Programming, Matrix Backtracking, String Processing, and State Machine management.
-- **Graphics Engine & Coordinate Mathematics**: Demonstrates custom 2D graphics programming, camera pan/zoom transformations (`world_to_screen` / `screen_to_world`), dynamic spring/wiggle math, and custom particle collision physics.
+- **Computer Science Core Mastery**: Demonstrates hands-on implementation of fundamental algorithms—Dynamic Programming, Matrix Backtracking, String Processing, and State Management.
+- **Graphics & Coordinate Mathematics**: Demonstrates 2D graphics programming, camera pan/zoom transformations (`world_to_screen` / `screen_to_world`), dynamic sine-wave visual offsets, and linear interpolation (`lerp`) tracer animation.
 - **Software Architecture**: Demonstrates clean layering between domain logic (`Dna`), visualization engines (`DNAVisualizer`), and fallback systems.
 
 ---
@@ -149,7 +149,7 @@ The project's key differentiator is its ability to make abstract **Dynamic Progr
 ### Needleman–Wunsch (Global Sequence Alignment)
 The Needleman–Wunsch algorithm computes the optimal global alignment between two sequence strings $S_1$ of length $n$ and $S_2$ of length $m$. It uses a 2D matrix $F$ of size $(n+1) \times (m+1)$.
 
-$$\text{Scoring Parameters: } \text{Match } s(a,b) = +1, \quad \text{Mismatch } s(a,b) = -1, \quad \text{Gap Penalty } g = -1$$
+$$\text{Scoring Parameters in Code: } \text{Match } s(a,b) = +1, \quad \text{Mismatch } s(a,b) = -1, \quad \text{Gap Penalty } g = -1$$
 
 **Matrix Recurrence Relation:**
 $$F(i,j) = \max \begin{cases} 
@@ -168,7 +168,7 @@ $$F(i, 0) = i \cdot g \quad (0 \le i \le n), \qquad F(0, j) = j \cdot g \quad (0
 ### Smith–Waterman (Local Sequence Alignment)
 The Smith–Waterman algorithm identifies the highest-scoring local region of similarity between two sequences, resetting negative scores to zero to allow local sub-segment matching.
 
-$$\text{Scoring Parameters: } \text{Match } s(a,b) = +2, \quad \text{Mismatch } s(a,b) = -1, \quad \text{Gap Penalty } g = -1$$
+$$\text{Scoring Parameters in Code: } \text{Match } s(a,b) = +2, \quad \text{Mismatch } s(a,b) = -1, \quad \text{Gap Penalty } g = -1$$
 
 **Matrix Recurrence Relation:**
 $$H(i,j) = \max \begin{cases} 
@@ -191,7 +191,7 @@ Reconstruction of aligned strings $(\text{align}_1, \text{align}_2)$ follows the
 - **Upward Step** $(i-1, j)$: Emits $S_1[i-1]$ and gap `"-"`.
 - **Leftward Step** $(i, j-1)$: Emits gap `"-"` and $S_2[j-1]$.
 
-In [dna.py](file:///Users/jhum/Documents/Padhai%20stuff/college/mca/coding/python/daaaaaa/dna.py), traceback cell coordinates $(i, j)$ are recorded in a list and passed to both the CLI matrix table display and the Pygame tracer particle system.
+In [dna.py](file:///Users/jhum/Documents/Padhai%20stuff/college/mca/coding/python/daaaaaa/dna.py), traceback cell coordinates $(i, j)$ are recorded in a list and passed to both the CLI matrix table display and the Pygame tracer system.
 
 ---
 
@@ -322,9 +322,9 @@ helel04-dnaSequenceAnalyser/
 
 ## 12. Technology Stack
 
-- **Core Language**: Python 3.6+ (Absolute Minimum for f-string syntax; **Python 3.8+ Recommended** for Pygame 2.6 / Rich wheel support)
-- **GUI & Graphics Engine**: Pygame 2.6.1 (2D rendering, particle system, math transform)
-- **Formatting Utilities**: Rich (Optional ANSI formatting) / Fallback ANSI sequence constants
+- **Core Language**: Python 3.6+ (Python 3.8+ recommended for pre-compiled dependency wheels)
+- **GUI Graphics Engine**: Pygame 2.0+ (Optional 2D visualizer)
+- **Formatting Utilities**: Rich (Optional ANSI formatting) / Standard ANSI escape sequence constants
 - **Standard Libraries**: `time`, `os`, `re`, `math`
 
 ---
@@ -332,7 +332,7 @@ helel04-dnaSequenceAnalyser/
 ## 13. Installation
 
 ### Prerequisites
-- Python 3.6 or higher installed (Python 3.8+ recommended for pre-built Pygame 2.6+ binary wheels).
+- Python 3.6 or higher installed (Python 3.8+ recommended).
 
 ### Setup Instructions
 
@@ -348,7 +348,7 @@ helel04-dnaSequenceAnalyser/
    source .venv/bin/activate
    ```
 
-3. **Install Dependencies:**
+3. **Install Optional Dependencies:**
    ```bash
    pip install pygame rich
    ```
@@ -471,7 +471,7 @@ In both CLI Developer Mode and the Pygame GUI:
 - **Grid Layout**: Rows represent Sequence 1 ($S_1$), columns represent Sequence 2 ($S_2$).
 - **Cell Scores**: Each cell $(i, j)$ contains the optimal alignment score for sub-problem $S_1[1..i]$ and $S_2[1..j]$.
 - **Highlighted Route**: Displays the traceback path selected by the algorithm.
-- **Liquid Tracer (GUI)**: An animated particle interpolation highlights how the computer backtracks from the destination cell to origin.
+- **Liquid Tracer (GUI)**: An animated tracer particle (`lerp`) highlights how the computer backtracks from the destination cell to origin.
 
 ---
 
@@ -542,7 +542,7 @@ The interface follows strict visual semantics across CLI and GUI:
 
 ## 24. Limitations
 
-- **Fixed Scoring Matrices**: Uses static default linear match/mismatch/gap scores rather than configurable substitution matrices (such as BLOSUM62 or PAM250).
+- **Fixed Scoring Schemes**: Uses fixed linear match/mismatch/gap scores (`+1/-1/-1` for global, `+2/-1/-1` for local) rather than configurable matrix models (such as BLOSUM62 or PAM250).
 - **Sequence Length**: Pygame 2D grid rendering is designed for educational sequence lengths ($\le 100$ bases).
 - **Format Support**: Direct raw sequence string input (no built-in FASTA file parser).
 - **Persistence**: Runs in-memory without persistent database storage.
@@ -597,4 +597,4 @@ This project directly serves computer science and bioinformatics courses (*Desig
 1. Needleman, S. B., & Wunsch, C. D. (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. *Journal of Molecular Biology*, 48(3), 443-453.
 2. Smith, T. F., & Waterman, M. S. (1981). Identification of common molecular subsequences. *Journal of Molecular Biology*, 147(1), 195-197.
 3. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press. (Chapter 15: Dynamic Programming).
-4. Pygame Development Team. Pygame Documentation (v2.6.1). https://www.pygame.org/docs/
+4. Pygame Development Team. Pygame Documentation. https://www.pygame.org/docs/
