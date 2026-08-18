@@ -322,7 +322,7 @@ helel04-dnaSequenceAnalyser/
 
 ## 12. Technology Stack
 
-- **Core Language**: Python 3.9+
+- **Core Language**: Python 3.6+ (Absolute Minimum for f-string syntax; **Python 3.8+ Recommended** for Pygame 2.6 / Rich wheel support)
 - **GUI & Graphics Engine**: Pygame 2.6.1 (2D rendering, particle system, math transform)
 - **Formatting Utilities**: Rich (Optional ANSI formatting) / Fallback ANSI sequence constants
 - **Standard Libraries**: `time`, `os`, `re`, `math`
@@ -332,7 +332,7 @@ helel04-dnaSequenceAnalyser/
 ## 13. Installation
 
 ### Prerequisites
-- Python 3.9 or higher installed.
+- Python 3.6 or higher installed (Python 3.8+ recommended for pre-built Pygame 2.6+ binary wheels).
 
 ### Setup Instructions
 
