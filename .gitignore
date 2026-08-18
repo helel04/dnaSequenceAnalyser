@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+tempCodeRunnerFile.py
+dna.py.zip
+"dna 2.py"
